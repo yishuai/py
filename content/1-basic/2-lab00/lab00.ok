@@ -1,0 +1,23 @@
+{
+    "name": "Lab 0",
+    "endpoint": "kd/cs01/sp19/test",
+    "src": [
+        "lab00.py"
+    ],
+    "tests": {
+        "lab00.py:twenty_nineteen": "doctest",
+        "tests/python_basics.py": "ok_test"
+    },
+    "default_tests": [
+        "twenty_nineteen",
+        "python_basics"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}
