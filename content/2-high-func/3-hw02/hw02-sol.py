@@ -26,7 +26,7 @@ def make_adder(n):
     3
     """
 
-    return 'YOUR EXPRESSION HERE'
+    return lambda k: n+k
 
 def product(n, term):
     """Return the product of the first n terms in a sequence.
@@ -49,7 +49,11 @@ def product(n, term):
     >>> check(HW_SOURCE_FILE, 'product', ['Recursion'])
     True
     """
-    "*** YOUR CODE HERE ***"
+    x = 1
+    while n:
+        x *= term(n)
+        n -= 1
+    return x
 
 def factorial(n):
     """Return n factorial for n >= 0 by calling product.
@@ -62,7 +66,7 @@ def factorial(n):
     >>> check(HW_SOURCE_FILE, 'factorial', ['Recursion', 'For', 'While'])
     True
     """
-    "*** YOUR CODE HERE ***"
+    return product(n, identity)
 
 def accumulate(combiner, base, n, term):
     """Return the result of combining the first n terms in a sequence and base.
@@ -79,10 +83,16 @@ def accumulate(combiner, base, n, term):
     25
     >>> accumulate(mul, 2, 3, square)    # 2 * 1^2 * 2^2 * 3^2
     72
-    >>> accumulate(lambda x, y: x + y + 1, 2, 3, square)
-    19      #(((2 + 1^2 + 1) + 2^2 + 1) + 3^2 + 1)
+    >>> accumulate(lambda x, y: x + y + 1, 2, 3, square)    #(((2 + 1^2 + 1) + 2^2 + 1) + 3^2 + 1)
+    19
     """
-    "*** YOUR CODE HERE ***"
+    x = base
+    while n:
+        x = combiner(x,term(n))
+        n -= 1
+    return x
+
+# accumulate(lambda x, y: x + y + 1, 2, 3, square)
 
 def summation_using_accumulate(n, term):
     """Returns the sum of term(1) + ... + term(n). The implementation
@@ -97,7 +107,7 @@ def summation_using_accumulate(n, term):
     ...       ['Recursion', 'For', 'While'])
     True
     """
-    "*** YOUR CODE HERE ***"
+    return accumulate(add,0,n,term)
 
 def product_using_accumulate(n, term):
     """An implementation of product using accumulate.
@@ -111,7 +121,7 @@ def product_using_accumulate(n, term):
     ...       ['Recursion', 'For', 'While'])
     True
     """
-    "*** YOUR CODE HERE ***"
+    return accumulate(mul,1,n,term)
 
 
 
@@ -140,4 +150,8 @@ def make_repeater(f, n):
     >>> make_repeater(square, 0)(5) # Yes, it makes sense to apply the function zero times! 
     5
     """
-    "*** YOUR CODE HERE ***"
+    rf = identity
+    while n:
+        rf = compose1(f,rf)
+        n -=1
+    return rf

@@ -39,10 +39,14 @@ class Fib():
         self.value = value
 
     def next(self):
-        "*** YOUR CODE HERE ***"
+
+        "code here"
 
     def __repr__(self):
         return "Fib object, value " + str(self.value)
+
+# start = Fib()
+# start.next().next()
 
 class VendingMachine:
     """A vending machine that vends some product for some price.

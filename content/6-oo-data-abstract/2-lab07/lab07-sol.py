@@ -9,7 +9,12 @@ def link_to_list(link):
     >>> link_to_list(Link.empty)
     []
     """
-    "*** YOUR CODE HERE ***"
+    if link == Link.empty:
+        return []
+    if link.rest == Link.empty:
+        return [link.first]
+    else:
+        return [link.first] + link_to_list(link.rest)
 
 def store_digits(n):
     """Stores the digits of a positive number n in a linked list.
@@ -22,18 +27,11 @@ def store_digits(n):
     >>> store_digits(876)
     Link(8, Link(7, Link(6)))
     """
-    "*** YOUR CODE HERE ***"
 
-def cumulative_sum(t):
-    """Mutates t so that each node's label becomes the sum of all labels in
-    the corresponding subtree rooted at t.
-
-    >>> t = Tree(1, [Tree(3, [Tree(5)]), Tree(7)])
-    >>> cumulative_sum(t)
-    >>> t
-    Tree(16, [Tree(8, [Tree(5)]), Tree(7)])
-    """
-    "*** YOUR CODE HERE ***"
+    if n < 10:
+        return Link(n)
+    else:
+        return Link(store_digits(n // 10), Link(n % 10))
 
 # Linked List Class
 class Link:
@@ -77,8 +75,8 @@ class Link:
             self = self.rest
         return string + str(self.first) + '>'
 
-link = Link(1, Link(2, Link(3, Link(4))))
-link_to_list(link)
+# link = Link(1, Link(2, Link(3, Link(4))))
+# link_to_list(link)
 
 # Tree Class
 class Tree:
@@ -154,3 +152,41 @@ class Tree:
                 tree_str += print_tree(b, indent + 1)
             return tree_str
         return print_tree(self).rstrip()
+
+def cumulative_sum(t):
+    """Mutates t so that each node's label becomes the sum of all labels in
+    the corresponding subtree rooted at t.
+
+    >>> t = Tree(1, [Tree(3, [Tree(5)]), Tree(7)])
+    >>> cumulative_sum(t)
+    >>> t
+    Tree(16, [Tree(8, [Tree(5)]), Tree(7)])
+    """
+
+    def get_x(st):
+
+        if st.is_leaf():
+            return st
+        else:
+            y = [get_x(x) for x in st.branches]
+            return Tree(st.label + sum([s.label for s in y]), y)
+
+    # print(get_x(t))
+    s = get_x(t)
+
+    def copy(a, b):
+        if a.is_leaf():
+            a.label = b.label
+            a.branches = b.branches
+        else:
+            a.label = b.label
+            for i in range(len(a.branches)):
+                copy((a.branches)[i],(b.branches)[i])
+
+    copy(t,s)
+
+# t = Tree(3, [Tree(5)])
+t = Tree(1, [Tree(3, [Tree(5)]), Tree(7)])
+print(t)
+cumulative_sum(t)
+print(t)

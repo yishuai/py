@@ -22,9 +22,7 @@ class Card(object):
         >>> other_staff.defense
         500
         """
-        self.name = name
-        self.attack = attack
-        self.defense = defense
+        "*** YOUR CODE HERE ***"
 
     def power(self, other_card):
         """
@@ -43,7 +41,7 @@ class Card(object):
         >>> third_card.power(staff_member)
         50.0
         """
-        return self.attack - other_card.defense/2
+        "*** YOUR CODE HERE ***"
 
 
     def effect(self, other_card, player, opponent):
@@ -81,9 +79,7 @@ class Player(object):
         """
         self.deck = deck
         self.name = name
-        self.hand = []
-        for i in range(5):
-            self.hand.append(self.deck.draw())
+        "*** YOUR CODE HERE ***"
 
     def draw(self):
         """Draw a card from the player's deck and add it to their hand.
@@ -97,7 +93,7 @@ class Player(object):
         6
         """
         assert not self.deck.is_empty(), 'Deck is empty!'
-        self.hand.append(self.deck.draw())
+        "*** YOUR CODE HERE ***"
 
     def play(self, card_index):
         """Remove and return a card from the player's hand at the given index.
@@ -113,7 +109,7 @@ class Player(object):
         >>> len(test_player.hand)
         2
         """
-        return self.hand.pop(card_index)
+        "*** YOUR CODE HERE ***"
 
 
     def display_hand(self):

@@ -18,7 +18,18 @@ def make_counter():
     >>> c('b') + c2('b')
     5
     """
-    "*** YOUR CODE HERE ***"
+    strx_dict = {}
+
+    def str_cnt(strx):
+        nonlocal strx_dict
+        if strx in strx_dict:
+            strx_dict[strx] += 1
+            return strx_dict[strx]
+        else:
+            strx_dict[strx] = 1
+            return strx_dict[strx]
+
+    return str_cnt
 
 def make_fib():
     """Returns a function that returns the next Fibonacci number
@@ -39,7 +50,14 @@ def make_fib():
     >>> fib() + sum([fib2() for _ in range(5)])
     12
     """
-    "*** YOUR CODE HERE ***"
+    fib0 = 0
+    fib1 = 1
+    def fibn():
+        nonlocal fib0, fib1
+        fib1, fib0 = fib0+fib1, fib1
+        return fib1-fib0
+
+    return fibn
 
 def make_withdraw(balance, password):
     """Return a password-protected withdraw function.

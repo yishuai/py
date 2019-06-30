@@ -1,5 +1,3 @@
-from ucb import trace
-
 HW_SOURCE_FILE = 'hw03.py'
 
 #############
@@ -33,14 +31,8 @@ def has_seven(k):
     ...       ['Assign', 'AugAssign'])
     True
     """
-    if k == 0:
-        return False
-    if k % 10 == 7:
-        return True
-    else:
-        return has_seven(k // 10)
+    "*** YOUR CODE HERE ***"
 
-# @trace
 def pingpong(n):
     """Return the nth element of the ping-pong sequence.
 
@@ -72,45 +64,7 @@ def pingpong(n):
     >>> check(HW_SOURCE_FILE, 'pingpong', ['Assign', 'AugAssign'])
     True
     """
-    # too slow
-
-    # if n == 1:
-    #     return 1
-    # elif n == 2:
-    #     return 2
-    # elif n == 3:
-    #     return 3
-    # elif has_seven(n-1) or ((n-1) % 7 == 0):
-    #     return pingpong(n - 2)
-    # else:
-    #     return 2*pingpong(n - 1) - pingpong(n - 2)
-
-    # return two value
-    # if n == 1:
-    #     return 1,1
-    # elif n == 2:
-    #     return 2,1
-    # elif n == 3:
-    #     return 3,1
-    # elif has_seven(n-1) or ((n-1) % 7 == 0):
-    #     return (lambda x: (x[0]-x[1], -x[1]))(pingpong(n-1))
-    # else:
-    #     return (lambda x: (x[0]+x[1], x[1]))(pingpong(n-1))
-
-    # from bottom to top
-
-    def helper(k,cur,dir):
-        if k == n:
-            return cur + dir
-        elif has_seven(k) or (k % 7 == 0):
-            return helper(k + 1, cur + dir, -dir)
-        else:
-            return helper(k + 1, cur + dir, dir)
-
-    return helper(1,0,1)
-
-# pingpong(7)
-
+    "*** YOUR CODE HERE ***"
 
 def accumulate(combiner, base, n, term):
     """Return the result of combining the first n terms in a sequence and base.
@@ -155,7 +109,7 @@ def taxicab(a, b):
     >>> taxicab(ess_a_bagel, times_square)
     9
     """
-    return abs(street(a)-street(b)) + abs(avenue(a)-avenue(b))
+    "*** YOUR CODE HERE ***"
 
 def squares(s):
     """Returns a new list containing square roots of the elements of the
@@ -168,7 +122,7 @@ def squares(s):
     >>> squares(seq)
     []
     """
-    return [int(x**(1/2)) for x in s if x**(1/2) == round(x**(1/2))]
+    "*** YOUR CODE HERE ***"
 
 def count_change(amount):
     """Return the number of ways to make change for amount.
@@ -185,50 +139,7 @@ def count_change(amount):
     >>> check(HW_SOURCE_FILE, 'count_change', ['While', 'For'])
     True
     """
-
-    from math import log
-    max_coin = int(log(amount, 2))
-
-    def count_change_coin(amount, maxc):
-        if amount < 0:
-            return 0
-        elif amount == 0:
-            return 1
-        elif maxc == 0:
-            return 1
-        else:
-            return count_change_coin(amount-pow(2,maxc), maxc) + count_change_coin(amount, maxc-1)
-
-    return count_change_coin(amount,max_coin)
-
-    # def count_partitions(number, at_most):
-    #     if number < 0:
-    #         # There is no way to represent a negative number
-    #         return 0
-    #     elif number == 0:
-    #         # There is only one way to represent zero
-    #         return 1
-    #     elif at_most == 0:
-    #         # There is only one way to represent a number using one (2^0)
-    #         return 1
-    #     else:
-    #         # The representation may contains 2^at_most or not
-    #         contains = count_partitions(number - pow(2, at_most), at_most)
-    #         not_contains = count_partitions(number, at_most - 1)
-    #         return contains + not_contains
-    #
-    # from math import log
-    # at_most = int(log(amount, 2))
-
-    # def find_at_most(number):
-    #     k = 0
-    #     while pow(2, k) <= number:
-    #         k += 1
-    #     return k - 1
-    #
-    # at_most = find_at_most(amount)
-
-    # return count_partitions(amount, at_most)
+    "*** YOUR CODE HERE ***"
 
 def print_move(origin, destination):
     """Print instructions to move a disk."""
@@ -262,14 +173,7 @@ def move_stack(n, start, end):
     Move the top disk from rod 1 to rod 3
     """
     assert 1 <= start <= 3 and 1 <= end <= 3 and start != end, "Bad start/end"
-
-    other = ({1,2,3}-{start,end}).pop()
-    if n == 1:
-        print_move(start, end)
-    else:
-        move_stack(n-1, start, other)
-        move_stack(1,start,end)
-        move_stack(n-1, other, end)
+    "*** YOUR CODE HERE ***"
 
 ###################
 # Extra Questions #
@@ -286,4 +190,4 @@ def make_anonymous_factorial():
     >>> check(HW_SOURCE_FILE, 'make_anonymous_factorial', ['Assign', 'AugAssign', 'FunctionDef', 'Recursion'])
     True
     """
-    return lambda n: (lambda f, v: f(f, v))(lambda f,v: 1 if v==1 else v*f(f,v-1),n)
+    return 'YOUR_EXPRESSION_HERE'
