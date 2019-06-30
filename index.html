@@ -25,7 +25,31 @@
 
       <h1>计算机程序结构和理解：以Python为例</h1>
 
-      <p>本课程其实是算法和数据结构课，但是在学习Python的过程中潜移默化地实现学习的。你将在不知不觉中掌握递归、Trace、面向对象、链表、Tree、搜索等内容。这门课程的内容实在是太棒。请坚持。</p>
+
+      <p>蓦然回首，自己也编了不少程序了，为什么计算机程序对我来说，还是一个谜？</p>
+
+      <p>算法和数据结构，我知道它们是重要的。但为什么看了这么多书，刷了这么多题，还是没有头绪？</p>
+
+      <p>这些问题，也曾经困扰着MIT（麻省理工学院）、UCB（伯克利大学）的老师和同学们。下面是他们的答案：</p>
+
+      <p>源自MIT的SICP（Structure and Interpretation of Computer Programs）传统认为，掌握计算机程序的关键在于掌握下面三个概念：
+        <ol>
+          <li>通过函数和数据结构对真实世界的抽象</li>
+          <li><a href="https://cs.lmu.edu/~ray/notes/paradigms/">编程范式</a>，如：面向对象，事件驱动，函数式编程</li>
+          <li>管理大型程序复杂性的技术</li>
+        </ol>
+      </p>
+
+      <p> 因此，MIT和伯克利大学的老师们开发了本课程。课程包括上述三部分的内容：抽象（函数抽象和数据抽象）；编程范式（尤其是面向对象）；分布式系统（管理大型程序）。</p>
+
+      <p> 本课程基于伯克利大学cs61a课程内容进行。这是因为该课程基于Python语言，而Python是目前机器学习和人工智能的主要语言，因此，可以为后续的机器学习和人工智能学习打下基础。
+        为此，本课程也略去了原始课程中Scheme这一部分，因为这部分主要涉及程序在计算机中是如何编译和执行的。虽然这部分内容极为重要。但对于利用Python进行应用及算法开发，尚没有到必须的程度</p>
+
+      <p> 课程的Github仓库下有200MB的材料。我将cs61a的几十节课的内容，合并到了9个单元，因此适合自学。通过下面的学习和练习，你将在不知不觉中掌握List，递归、Trace、面向对象、链表、Tree、BTree、搜索等内容。
+        建立了“抽象”和”编程范式“的基本感觉，并且熟悉练习了Python，从而可能真正踏入了计算机软件的大门。</p>
+
+      <p> 要强调的是：课程材料中的Demo代码、Lab、Homework，请找一个安静的环境，耐心地、一个个完成。这些才是这门课程中最宝贵的。是黄金所在。目录下如果有sol.py的文件的话，那是我完成的结果。注意这些结果不是最优的标准答案！只是我的解答。
+        不要看这些答案。自己做，Debug。学习编程最重要的就是编。慢慢的你就会感觉到这门课程的内容实在是太棒。请坚持。</p>
 
       <h2>学习路线</h2>
 
@@ -60,6 +84,25 @@
       <h2> <a name="material"> 学习材料 </a></h2>
       <table style="width:100%">
       <tr>
+        <td>材料</td>
+        <td>
+            <ul>
+                <li> 课程材料：<a href="https://github.com/yishuai/py">Github</a></li>
+                <li> 克隆命令：git clone https://github.com/yishuai/py.git</li>
+            </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>助教</td>
+        <td>
+            <ul>
+                <li> <a href="http://albertwu.org/cs61a/"> Albert Wu</a>，他在CS61a当了8个学期的助教，2015年夏毕业离开，目前在谷歌。
+                  在他的主页上，能够做练习，比如<a href="http://albertwu.org/cs61a/review/environments/basic.html">这个</a>，非常专业。怪不得会去谷歌</li>
+            </ul>
+        </td>
+      </tr>
+
+      <tr>
         <td>参考课程</td>
         <td>
           <ul>
@@ -78,7 +121,17 @@
         <td>课本</td>
         <td>
           <ul>
-            <li><a href="http://composingprograms.com/"> CS61A主课本 </a>：已打印为PDF，存在各节的1-text目录下 </li>
+            <li> CS61A主课本《Composing Programs》
+              <ul>
+                <li> <a href="http://composingprograms.com/"> 英文最新版 </a>：已打印为PDF，存在各节的1-text目录下。网页版有视频和PythonTutor链接，内容更丰富多彩，但似乎要翻墙 </li>
+              </ul>
+            </li>
+            <li> MIT经典课本《Structure and Interpretation of Computer Programs》
+              <ul>
+                <li> <a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html"> 英文第二版 </a>：MIT经典 </li>
+                <li> <a href="https://www.bookstack.cn/read/sicp-py-zh/README.md">中文版</a>，国内志愿者社区翻译，<a href="https://github.com/apachecn/sicp-py-zh">Github仓库</a></li>
+              </ul>
+            </li>
             <li> 参考课本
               <ul>
                 <li>JVG：John V. Guttag - Introduction to Computation and Programming Using Python_ With Application to Understanding Data-The MIT Press (2016)，非常好的课本，前半本和下面的内容相匹配，后面更进一步，讲了：蒙特卡洛仿真，随机游走，动态优化，机器学习。</li>
@@ -89,22 +142,14 @@
         </td>
       </tr>
       <tr>
-        <td>材料</td>
-        <td>
-            <ul>
-                <li> 课程材料：<a href="https://github.com/yishuai/py">Github</a></li>
-                <li> 克隆命令：git clone https://github.com/yishuai/py.git</li>
-            </ul>
-        </td>
-      </tr>
-      <!-- <tr>
-        <td>视频</td>
+        <td>参考材料</td>
         <td>
           <ul>
-              <li>北理工<a href="https://www.icourse163.org/learn/BIT-268001?tid=1003243006">《Python基础》</a></li>
+              <li>北理工视频公开课：<a href="https://www.icourse163.org/learn/BIT-268001?tid=1003243006">《Python基础》</a></li>
+              <li>知乎问题：<a href="https://www.zhihu.com/question/62147151">如何看待Berkeley开设的CS61A:SICP in Python课程？</a></li>
           </ul>
         </td>
-      </tr> -->
+      </tr>
       </table>
 
       <a href="#index">返回目录</a>
