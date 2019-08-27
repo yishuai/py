@@ -23,14 +23,14 @@
 
     <body>
 
-      <h1>计算机程序的结构和理解：以Python为例</h1>
+      <h1>Python</h1>
 
       <p>SICP（Structure and Interpretation of Computer Programs）源自MIT，认为理解计算机程序的关键在于建立下面三个概念：
-        <ol>
+        <ul>
           <li>抽象，包括函数抽象和数据抽象，即通过函数和数据结构对真实世界进行抽象</li>
           <li><a href="https://cs.lmu.edu/~ray/notes/paradigms/">编程范式</a>，如：面向对象，事件驱动，函数式编程</li>
           <li>分布式系统：管理大型程序复杂性的技术</li>
-        </ol>
+        </ul>
       </p>
 
       <p> 伯克利大学基于Python开发了本课程，内容正好包括上述三部分内容。基于Python的一个好处是Python是目前机器学习和人工智能的主要编程语言，因此，可以为后续的机器学习和人工智能学习打下基础。我们暂时略去原课程中Scheme这一部分。该部分涉及程序在计算机中是如何编译和执行的，包括一个Python解析器的实现示例，非常精彩。</p>
@@ -64,9 +64,17 @@
           <li> <a href="#basic">Python基础</a></li>
           <li> <a href="#higher-func">高阶函数</a></li>
           <li> <a href="#recur">Recursion</a></li>
+          <li> <a href="#intro">算法：Divide and Conquer</a></li>
           <li> <a href="#data-abstract">数据抽象</a></li>
           <li> <a href="#oop">面向对象编程</a></li>
           <li> <a href="#oo-data-abstract">面向对象数据抽象</a></li>
+          <li> <a href="#sort">算法：Sorting, Searching, Randomized Algorithms</a></li>
+          <li> <a href="#hash">算法：哈希</a></li>
+          <li> <a href="#graph">算法：图</a></li>
+          <li> <a href="#sp">算法：最短路径</a></li>
+          <li> <a href="#dp">算法：动态编程</a></li>
+          <li> <a href="#greedy">算法：Greedy</a></li>
+          <li> <a href="#analysis">算法：分析</a></li>
           <li> <a href="#7-sql">SQL</a></li>
           <li> <a href="#8-distri-sys">分布式结构</a></li>
       </ul>
@@ -85,13 +93,51 @@
         </td>
       </tr>
       <tr>
-        <td>经典课程</td>
+        <td>入门课程</td>
+        <td>
+          <ul>
+              <li> <a href="https://py.mit.edu/6.145">MIT，6.145，编程入门（Python）</a> </li>
+              <li> <a href="https://6009.cat-soop.org/spring19">MIT，6.009，编程基础（Python）</a> </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>入门材料</td>
+        <td>
+          <ul>
+              <li>北理工视频公开课：<a href="https://www.icourse163.org/learn/BIT-268001?tid=1003243006">《Python基础》</a></li>
+              <li>互动课本</li>
+              <ul>
+                  <li><a href="https://runestone.academy/runestone/books/published/thinkcspy/index.html">How to Think Like a Computer Scientist</a>， Interactive Edition，边学边练</li>
+                  <li><a href="https://runestone.academy/runestone/books/published/fopp/index.html">Python编程基础</a>， Interactive Edition，边学边练</li>
+                  <li><a href="https://runestone.academy/runestone/static/StudentCSP/index.html">CS principles: Big Ideas in programming</a>，交互式版本，边学边练</li>
+                  <!-- <li>CS: <a href="http://open.163.com/special/Khan/computer.html">Python计算机科学入门</a>，中译，已经在Khan的官网上移除了，因为这是Khan本人在2011年做的尝试，录了一套视频。可能现在觉得不专业，就移除了。在Youtube上还有</li> -->
+              </ul>
+              <li>图书</li>
+              <ul>
+                <li><a href="https://docs.python.org/3/tutorial/index.html">Python3官方入门指南</a></li>
+                <li>Python by Example: Learning to Program in 150 Challenges, 2019，剑桥大学出版社，150个例子，让儿童也学会Python编程</li>
+                <li>Learning Python：powerful object-oriented programming, 2013</li>
+                <li>Learn Python 3 the Hard Way, 2017</li>
+                <li>Python crash course，面向项目</li>
+              </ul>
+            <li>实战</li>
+            <ul>
+              <li>谷歌，<a href="https://developers.google.com/edu/python/">Python 2日教程</a>，2010年，包括文本、视频、练习。实战</li>
+              <li>郭超洪老师，<a href="https://github.com/minskeyguo/mylib/tree/master/python-edu">面向儿童的Python入门课程材料</a></li>
+            </ul>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>高级课程</td>
         <td>
           <ul>
               <li> 伯克利，CS61A，计算机程序的结构和理解
                 <ul>
                    <li><a href="https://cs61a.org/">2019年夏</a>: 正在开班，视频可看</li>
                    <li><a href="https://inst.eecs.berkeley.edu/~cs61a/sp19/resources.html">2019春季</a>: 已完成，视频不能看，但所有材料全</li>
+                   <li>知乎问题：<a href="https://www.zhihu.com/question/62147151">如何看待Berkeley开设的CS61A:SICP in Python课程？</a></li>
                  </ul>
               </li>
               <li> MIT，6.00.1x，计算机科学和编程入门：以Python为例
@@ -100,13 +146,11 @@
                   <li><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016">MIT OCW 6.0001</a>，2016年</li>
                  </ul>
               </li>
-              <li> <a href="https://py.mit.edu/6.145">MIT，6.145，编程入门（Python）</a> </li>
-              <li> <a href="https://6009.cat-soop.org/spring19">MIT，6.009，编程基础（Python）</a> </li>
           </ul>
         </td>
       </tr>
       <tr>
-        <td>课本</td>
+        <td>高级课本</td>
         <td>
           <ul>
             <li> CS61A主课本《Composing Programs》
@@ -130,7 +174,7 @@
         </td>
       </tr>
       <tr>
-        <td>CS61A助教</td>
+        <td>高级练习</td>
         <td>
             <ul>
                 <li> <a href="http://albertwu.org/cs61a/"> Albert Wu</a>，他在CS61a当了8个学期的助教，2015年夏毕业离开，目前在谷歌。
@@ -139,47 +183,37 @@
             </ul>
         </td>
       </tr>
+
       <tr>
-        <td>国内</td>
+        <td>算法课程</td>
         <td>
           <ul>
-              <li>北理工视频公开课：<a href="https://www.icourse163.org/learn/BIT-268001?tid=1003243006">《Python基础》</a></li>
-              <li>知乎问题：<a href="https://www.zhihu.com/question/62147151">如何看待Berkeley开设的CS61A:SICP in Python课程？</a></li>
+            <li>MIT 6.006，算法入门，<a href="
+http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/calendar/">2011年秋</a>（有视频），<a href="https://stellar.mit.edu/S/course/6/fa18/6.006/">2018年秋</a>（课程材料，无视频）</li>
+            <li>斯坦福 CS 161，设计和分析算法，<a href="http://web.stanford.edu/class/cs161/">2019年冬（未开课）</a>，<a href="https://www.coursera.org/specializations/algorithms">Coursera版本</a>：<a href="https://www.youtube.com/playlist?list=PLXFMmlk03Dt7Q0xr1PIAriY5623cKiH7V">Youtube视频1</a>，<a href="https://www.youtube.com/playlist?list=PLXFMmlk03Dt5EMI2s2WQBsLsZl7A5HEK6">Youtube视频2</a></li>
           </ul>
         </td>
       </tr>
       <tr>
-        <td>Runestone交互式教程</td>
+        <td>算法课本</td>
         <td>
-          <ol>
-              <li><a href="https://runestone.academy/runestone/books/published/thinkcspy/index.html">How to Think Like a Computer Scientist</a>， Interactive Edition，边学边练</li>
-              <li><a href="https://runestone.academy/runestone/books/published/fopp/index.html">Python编程基础</a>， Interactive Edition，边学边练</li>
-              <li><a href="https://runestone.academy/runestone/static/StudentCSP/index.html">CS principles: Big Ideas in programming</a>，交互式版本，边学边练</li>
-              <li><a href="https://runestone.academy/runestone/books/published/pythonds/index.html">Problem Solving with Algorithms and Data Structures Using Python</a>，交互式版本，边学边练，<a href="http://www.openbookproject.net/books/pythonds/">图书</a>，Release 3.0，和下面的内容非常匹配</li>
-              </li>
-              <!-- <li>CS: <a href="http://open.163.com/special/Khan/computer.html">Python计算机科学入门</a>，中译，已经在Khan的官网上移除了，因为这是Khan本人在2011年做的尝试，录了一套视频。可能现在觉得不专业，就移除了。在Youtube上还有</li> -->
-          </ol>
+          <ul>
+              <li>CLRS：Introduction to Algorithms, 3rd Edition, MIT Press.</li>
+              <li><a href="https://runestone.academy/runestone/books/published/pythonds/index.html">Problem Solving with Algorithms and Data Structures Using Python</a>，交互式版本，边学边练，<a href="http://www.openbookproject.net/books/pythonds/">图书</a></li>
+              <li>Jon Kleinberg, Éva Tardos: Algorithm Design </li>
+              <li>Sanjoy Dasgupta, Christos Papadimitriou, Umesh Vazirani: Algorithms </li>
+              <li>Tim Roughgarden: Algorithms Illuminated. <a href="http://www.algorithmsilluminated.org/">网址</a>，包括视频</li>
+          </ul>
         </td>
       </tr>
       <tr>
-        <td>图书</td>
+        <td>算法材料</td>
         <td>
-          <ol>
-            <li><a href="https://docs.python.org/3/tutorial/index.html">Python3官方入门指南</a></li>
-            <li>Python by Example: Learning to Program in 150 Challenges, 2019，剑桥大学出版社，150个例子，让儿童也学会Python编程</li>
-            <li>Learning Python：powerful object-oriented programming, 2013</li>
-            <li>Learn Python 3 the Hard Way, 2017</li>
-            <li>Python crash course，面向项目</li>
-          </ol>
-        </td>
-      </tr>
-      <tr>
-        <td>实战</td>
-        <td>
-          <ol>
-            <li>谷歌，<a href="https://developers.google.com/edu/python/">Python 2日教程</a>，2010年，包括文本、视频、练习。实战</li>
-            <li>郭超洪老师，<a href="https://github.com/minskeyguo/mylib/tree/master/python-edu">面向儿童的Python入门课程材料</a></li>
-          </ol>
+          <ul>
+            <li>A Course in Data Structures and Object-Oriented Design by Don Sheehy</li>
+            <li><a href="https://visualgo.net/en">可视化算法</a></li>
+            <li><a href="https://runestone.academy/runestone/static/cppds/index.html">C++数据结构与算法</a>，交互式版本</li>
+          </ul>
         </td>
       </tr>
       </table>
@@ -363,6 +397,48 @@
         <td>
             <ul>
             </ul>
+        </td>
+      </tr>
+      </table>
+
+      <a href="#index">返回目录</a>
+
+      <h2> <a name="intro">算法：Divide and Conquer</a></h2>
+      <table style="width:100%">
+      <tr>
+        <td>课本</td>
+        <td>
+          <ul>
+            <li>CLRS Sections 2.3 and 3</li>
+            <li>CLRS Sections 4.3 and 4.5</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>内容</td>
+        <td>
+          <ul>
+            <li> CS161 Lecture 1: Why are you here? And do you know how to multiply integers?</li>
+            <li> CS161 Lecture 2: MergeSort, Recurrences, and Asymptotics</li>
+            <li> CS161 Lecture 3: More recurrences, the master theorem, and the substitution method </li>
+            <li> MIT 1	Algorithmic thinking, peak finding	 </li>
+            <li> MIT 2	Models of computation, Python cost model, document distance	  </li>
+            <li> MIT 3	Insertion sort, merge sort	 </li>
+            <li> MIT 11 arithmetic, Karatsuba multiplication</li>
+            <li> MIT 12	Square roots, Newton's method	  </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>练习</td>
+        <td>
+          <ul>
+            <li> CS161 IPython Notebook: Karatsuba's algorithm </li>
+            <li> CS161 IPython Notebook: Insertion Sort and Merge Sort</li>
+            <li> MIT 2011 PS 1 </li>
+            <li> MIT 2011 PS 5 </li>
+            <li> MIT 2018 PS 1 Asymptotics, Recurrences </li>
+          </ul>
         </td>
       </tr>
       </table>
@@ -553,6 +629,267 @@
         <td>
             <ul>
             </ul>
+        </td>
+      </tr>
+      </table>
+
+      <a href="#index">返回目录</a>
+
+      <h2> <a name="sort">算法：Sorting, Searching, Randomized Algorithms</a></h2>
+      <table style="width:100%">
+      <tr>
+        <td>课本</td>
+        <td>
+          <ul>
+            <li>CLRS Chapter 9</li>
+            <li>CLRS Chapter 7 and 5.1,5.2,5.3</li>
+            <li>CLRS Sections 8.1-8.2</li>
+            <li>CLRS 12.1, 12.2, 12.3, Ch. 13.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>内容</td>
+        <td>
+          <ul>
+            <li> CS161 Lecture 4: More substitution method and the selection problem</li>
+            <li> CS161 Lecture 5: Randomized Algorithms and QuickSort</li>
+            <li> CS161 Lecture 6: BucketSort, RadixSort, and Sorting Lower Bounds</li>
+            <li> Lecture 6: BucketSort, RadixSort, and Sorting Lower Bounds</li>
+            <li> CS161 Lecture 7: Binary Search Trees and Red-Black Trees</li>
+            <li> MIT 4	Heaps and heap sort	  </li>
+            <li> MIT 5	Binary search trees, BST sort	  </li>
+            <li> MIT 6	AVL trees, AVL sort	 </li>
+            <li> MIT 7	Counting sort, radix sort, lower bounds for sorting and searching	 </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>练习</td>
+        <td>
+          <ul>
+            <li> CS161 IPython Notebook: Select algorithm</li>
+            <li> CS161 IPython Notebook: QuickSort</li>
+            <li> CS161 IPython Notebook: RadixSort</li>
+            <li> MIT 2011 PS 2 </li>
+            <li> MIT 2011 PS 3 </li>
+            <li> MIT 2018 PS 2 Sorting / Dynamic Arrays </li>
+            <li> MIT 2018 PS 3 Trees / Heaps </li>
+            <li> MIT 2018 PS 4 BST/AVL </li>
+          </ul>
+        </td>
+      </tr>
+      </table>
+
+      <a href="#index">返回目录</a>
+
+      <h2> <a name="hash">哈希</a></h2>
+      <table style="width:100%">
+      <tr>
+        <td>课本</td>
+        <td>
+          <ul>
+            <li>CLRS Ch. 11</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>内容</td>
+        <td>
+          <ul>
+            <li> CS161 Lecture 8: Hashing!</li>
+            <li> MIT 8	Hashing with chaining	  </li>
+            <li> MIT 9	Table doubling, Karp-Rabin	 </li>
+            <li> MIT 10	Open addressing, cryptographic hashing	 </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>练习</td>
+        <td>
+          <ul>
+            <li> CS161 IPython Notebook: Hashing</li>
+            <li> MIT 2011 PS 4 </li>
+            <li> MIT 2018 PS 5 Integer Sorting / Hashing </li>
+            <li> MIT Quiz 1	  </li>
+          </ul>
+        </td>
+      </tr>
+      </table>
+
+      <a href="#index">返回目录</a>
+
+      <h2> <a name="graph">算法：图</a></h2>
+      <table style="width:100%">
+      <tr>
+        <td>课本</td>
+        <td>
+          <ul>
+            <li>CLRS Ch. 22.1-22.4</li>
+            <li>CLRS Ch. 22.5</li>
+            <li>CLRS Ch. 23</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>内容</td>
+        <td>
+          <ul>
+            <li> CS161 Lecture 9: Graphs, BFS and DFS</li>
+            <li> CS161 Lecture 10: Finding Strongly Connected Components</li>
+            <li> CS161 Lecture 15: Minimum Spanning Trees</li>
+            <li> CS161 Lecture 16: Minimum Cuts and Karger's Algorithm</li>
+            <li> MIT 13	Breadth-first search (BFS)	  </li>
+            <li> MIT 14	Depth-first search (DFS), topological sorting	 </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>练习</td>
+        <td>
+          <ul>
+            <li> CS161 IPython Notebook: Graphs</li>
+            <li> CS161 IPython Notebook: SCC</li>
+            <li> CS161 IPython Notebook: MST</li>
+            <li> CS161 IPython Notebook: Karger's Algorithm</li>
+            <li> MIT 2011 PS 6 </li>
+            <li> MIT 2018 PS 6 Graph Traversal </li>
+          </ul>
+        </td>
+      </tr>
+      </table>
+
+      <a href="#index">返回目录</a>
+
+      <h2> <a name="sp">算法：最短路径</a></h2>
+      <table style="width:100%">
+      <tr>
+        <td>课本</td>
+        <td>
+          <ul>
+            <li>CLRS Ch. 24.1, 24.3</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>内容</td>
+        <td>
+          <ul>
+            <li> CS161 Lecture 11: Dijkstra's Algorithm and Bellman-Ford</li>
+            <li> MIT 15	Single-source shortest paths problem	  </li>
+            <li> MIT 16	Dijkstra	  </li>
+            <li> MIT 17	Bellman-Ford	  </li>
+            <li> MIT 18	Speeding up Dijkstra	 </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>练习</td>
+        <td>
+          <ul>
+            <li> CS161 IPython Notebook: Dijkstra</li>
+            <li> MIT Quiz 2 </li>
+            <li> MIT 2018 PS 7 Bellman-Ford / Dijkstra </li>
+            <li> MIT 2018 PS 8 Shortest Paths / Dynamic Programming </li>
+          </ul>
+        </td>
+      </tr>
+      </table>
+
+      <a href="#index">返回目录</a>
+
+      <h2> <a name="dp">算法：动态编程</a></h2>
+      <table style="width:100%">
+      <tr>
+        <td>课本</td>
+        <td>
+          <ul>
+            <li>CLRS Ch. 25.2, 15.1, 15.4</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>内容</td>
+        <td>
+          <ul>
+            <li> CS161 Lecture 12: Dynamic Programming and shortest paths: Bellman-Ford and Floyd-Warshall</li>
+            <li> CS161 Lecture 13: More dynamic programming</li>
+            <li> MIT 19	Memoization, subproblems, guessing, bottom-up; Fibonacci, shortest paths </li>
+            <li> MIT 20	Parent pointers; text justification, perfect-information blackjack	  </li>
+            <li> MIT 21	String subproblems, psuedopolynomial time; parenthesization, edit distance, knapsack	  </li>
+            <li> MIT 22	Two kinds of guessing; piano/guitar fingering, Tetris training, Super Mario Bros. </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>练习</td>
+        <td>
+          <ul>
+            <li> CS161 IPython Notebook: computing Fibonacci numbers</li>
+            <li> MIT 2011 PS 7 </li>
+            <li> MIT 2018 PS 9 More Dynamic Programming </li>
+          </ul>
+        </td>
+      </tr>
+      </table>
+
+      <a href="#index">返回目录</a>
+
+      <h2> <a name="greedy">算法：Greedy</a></h2>
+      <table style="width:100%">
+      <tr>
+        <td>课本</td>
+        <td>
+          <ul>
+            <li>CLRS Ch. 16.1, 16.2, 16.3</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>内容</td>
+        <td>
+          <ul>
+            <li> CS161 Lecture 14: Greedy Algorithms</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>练习</td>
+        <td>
+          <ul>
+            <li> CS161 IPython Notebook: Activity Selection</li>
+          </ul>
+        </td>
+      </tr>
+      </table>
+
+      <a href="#index">返回目录</a>
+
+      <h2> <a name="analysis">算法：分析</a></h2>
+      <table style="width:100%">
+      <tr>
+        <td>课本</td>
+        <td>
+          <ul>
+            <li></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>内容</td>
+        <td>
+          <ul>
+            <li> MIT 23	Computational complexity </li>
+            <li> MIT 24	Algorithms research topics </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>练习</td>
+        <td>
+          <ul>
+            <li> MIT 2018 PS 10 Everything Review </li>
+          </ul>
         </td>
       </tr>
       </table>
